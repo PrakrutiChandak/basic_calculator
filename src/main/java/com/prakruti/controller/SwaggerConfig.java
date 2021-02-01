@@ -20,14 +20,10 @@ public class SwaggerConfig {
 	@Bean
 	public Docket postsApi() {
 		return new Docket(DocumentationType.SWAGGER_2).groupName("public-api")
-				.apiInfo(apiInfo()).select().paths(postPaths()).build();
+				.apiInfo(apiInfo()).select().build();
 		
 	}
 	
-	private Predicate<String> postPaths() {
-		return or(regex("/api/hello"), regex("/api/cal.*"));
-	}
-
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder().title("Java hello API")
 				.description("calulator")
