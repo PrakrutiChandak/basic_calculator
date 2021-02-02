@@ -1,7 +1,10 @@
 package com.prakruti.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -12,26 +15,29 @@ public class HelloController {
 	@RequestMapping(method = RequestMethod.GET, value = "/api/hello")
 	public String greeting() {
 		return "index.html";
-//		return "welcome to the calculator home page";
 	}
 	
-	@PostMapping("/")
-	public String add() {
-		return "add.html";
+	@PostMapping(value="/api/add")
+	public String add(@RequestBody Ques ques) {
+		Integer c = ques.getA() + ques.getB();
+		return c.toString();
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/api/subtract")
-	public String subtract() {
-		return "subtract.html";
+	@PostMapping(value="/subtract")
+	public String subtract(@RequestBody Ques ques) {
+		Integer c = ques.getA() - ques.getB();
+		return c.toString();
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/api/divide")
-	public String divide() {
-		return "divide.html";
+	@PostMapping(value="/divide")
+	public String divide(@RequestBody Ques ques) {
+		Integer c = ques.getA() / ques.getB();
+		return c.toString();
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/api/multiply")
-	public String multiply() {
-		return "multiply.html";
+	@PostMapping(value="/multiply")
+	public String multiply(@RequestBody Ques ques) {
+		Integer c = ques.getA() * ques.getB();
+		return c.toString();
 	}
 }
