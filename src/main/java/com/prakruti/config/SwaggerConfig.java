@@ -1,4 +1,4 @@
-package com.prakruti.controller;
+package com.prakruti.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
