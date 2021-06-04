@@ -1,5 +1,8 @@
-package com.prakruti.model;
+package com.prakruti.service;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Ques {
 	
 	private Float a;

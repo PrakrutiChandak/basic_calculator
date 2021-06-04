@@ -1,11 +1,12 @@
 package com.prakruti.service;
 
-import com.prakruti.model.Ques;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Subtract {
-
-	public Float subtraction(Ques ques) {
+	public static Answer subtraction(Ques ques) {
 		Float c = ques.getA() - ques.getB();
-		return c;
+		Answer ans = new Answer(c);
+		return ans;
 	}
 }

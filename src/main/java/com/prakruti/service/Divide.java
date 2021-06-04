@@ -1,12 +1,15 @@
 package com.prakruti.service;
 
-import com.prakruti.model.Ques;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Divide {
 
-	
-	public float division(Ques ques) {
-			Float c = ques.getA() / ques.getB();
-			return c;
+	public static Answer division(Ques ques) {
+
+		Float c = ques.getA() / ques.getB();
+		Answer ans = new Answer(c);
+		return ans;
 	}
+
 }
